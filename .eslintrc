@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "vue",
+    "html",
+    "jest"
+  ],
+  "extends": ["plugin:vue/base"],
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "parser": "babel-eslint"
+  }
+}
