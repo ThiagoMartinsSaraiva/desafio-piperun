@@ -27,20 +27,20 @@
         </div>
       </div>
     </app-form>
-    <div v-else>
+    <div>
       <app-loading :isLoading="isLoading"/>
     </div>
   </div>
 </template>
 
 <script>
-import AuthService from '@/services/api/auth'
+import AuthService from '../services/api/auth'
 
-import AppInput from '@/components/AppInput.vue'
-import AppButton from '@/components/AppButton.vue'
-import AppForm from '@/components/AppForm.vue'
-import AppLoading from '@/components/AppLoading.vue'
-import AppNotifier from '@/components/AppNotifier.vue'
+import AppInput from '../components/AppInput.vue'
+import AppButton from '../components/AppButton.vue'
+import AppForm from '../components/AppForm.vue'
+import AppLoading from '../components/AppLoading.vue'
+import AppNotifier from '../components/AppNotifier.vue'
 
 export default {
   components: {

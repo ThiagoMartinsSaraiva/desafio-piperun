@@ -29,9 +29,7 @@
         </div>
       </div>
       <activities-list v-if="!isLoading" :items="activities" @activity-removed="removeActivity" @activity-concluded="concludeActivity" />
-      <div v-else>
-        <app-loading :isLoading="isLoading" />
-      </div>
+      <app-loading :isLoading="isLoading" />
     </main>
   </div>
 </template>

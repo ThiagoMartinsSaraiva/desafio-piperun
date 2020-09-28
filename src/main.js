@@ -9,9 +9,9 @@ Vue.filter('format-date', val => {
   return new Date(val).toLocaleString()
 })
 
+// eslint-disable-next-line no-new
 new Vue({
   el: '#app',
   router,
-  // components: { App },
   render: h => h(App)
 })

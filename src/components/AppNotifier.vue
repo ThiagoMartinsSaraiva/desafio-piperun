@@ -1,7 +1,7 @@
 <template>
   <div :class="type" v-if="show">
-    <p><b>{{ title }}</b></p>
-    <p>{{ message }}</p>
+    <p class="title"><b>{{ title }}</b></p>
+    <p class="message">{{ message }}</p>
   </div>
 </template>
 

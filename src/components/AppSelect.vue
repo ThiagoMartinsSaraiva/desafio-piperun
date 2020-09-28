@@ -8,7 +8,7 @@
           class="input"
           v-model="data"
         >
-          <option disabled value="0">Selecione</option>
+          <option disabled value="0" v-if="canShow">Selecione</option>
           <option v-for="item in items" :key="item[itemKey]" :value="item[itemKey]">
             {{ item[itemDisplayProp] }}
           </option>
@@ -33,8 +33,12 @@ export default {
       this.$emit('input', val)
     }
   },
+  computed: {
+    canShow () {
+      return !this.items.some(item => item.id === 0)
+    }
+  },
   props: {
-    placeholder: { type: String },
     label: { type: String },
     value: { type: Number, default: 0 },
     required: { type: Boolean, default: false },
@@ -44,7 +48,7 @@ export default {
     itemDisplayProp: { type: String, default: 'name' }
   },
   mounted () {
-    this.data = this.$props.value
+    this.data = this.value
   }
 }
 </script>

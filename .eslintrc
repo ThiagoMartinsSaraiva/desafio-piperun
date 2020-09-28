@@ -1,14 +1,27 @@
 {
   "plugins": [
     "vue",
-    "html",
-    "jest"
+    "html"
   ],
-  "extends": ["plugin:vue/base"],
+  "extends": [
+    "plugin:vue/base",
+    "standard"
+  ],
   "env": {
     "browser": true
   },
   "parserOptions": {
     "parser": "babel-eslint"
-  }
+  },
+  "rules": {
+    "generator-star-spacing": "warn"
+  },
+  "overrides": [
+    {
+      "files": "*.spec.js",
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
 }

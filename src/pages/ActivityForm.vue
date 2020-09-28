@@ -3,7 +3,8 @@
     <app-notifier :title="notifier.title" :show="notifier.show" :message="notifier.message" :type="notifier.type" />
     <app-form>
       <div slot="inputs" v-if="!isLoading">
-        <h1 id="title">Formulário de Atividades</h1>
+        <h1 class="text-white" id="title">Formulário de Atividades</h1>
+        <p class="text-white">* Campos obrigatórios</p>
         <app-input
           label="Título"
           placeholder="Título"
@@ -52,7 +53,7 @@
           />
         </div>
       </div>
-      <div slot="inputs" v-else>
+      <div slot="inputs">
         <app-loading :isLoading="isLoading" />
       </div>
     </app-form>
@@ -60,16 +61,16 @@
 </template>
 
 <script>
-import AppForm from '@/components/AppForm.vue'
-import AppInput from '@/components/AppInput.vue'
-import AppSelect from '@/components/AppSelect.vue'
-import AppButton from '@/components/AppButton.vue'
-import AppLoading from '@/components/AppLoading.vue'
-import AppNotifier from '@/components/AppNotifier.vue'
+import AppForm from '../components/AppForm.vue'
+import AppInput from '../components/AppInput.vue'
+import AppSelect from '../components/AppSelect.vue'
+import AppButton from '../components/AppButton.vue'
+import AppLoading from '../components/AppLoading.vue'
+import AppNotifier from '../components/AppNotifier.vue'
 
-import UsersService from '@/services/api/users'
-import ActivitiesService from '@/services/api/activities'
-import ActivityTypesService from '@/services/api/activityTypes'
+import UsersService from '../services/api/users'
+import ActivitiesService from '../services/api/activities'
+import ActivityTypesService from '../services/api/activityTypes'
 
 export default {
   data () {
@@ -111,7 +112,7 @@ export default {
       }, 3000)
     },
     submit () {
-      if (this.data.title && this.data.owner_id && this.data.activity_type_id && this.data.status) {
+      if (this.data.title && this.data.owner_id && this.data.activity_type_id) {
         this.isLoading = true
         if (this.routeId) {
           ActivitiesService.update(this.data, this.routeId)
@@ -195,7 +196,7 @@ export default {
     height: 100vh;
   }
 
-  #title {
+  .text-white {
     color: white;
     margin: 20px 0;
     text-shadow: 1px 1px 3px #333;

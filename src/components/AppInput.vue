@@ -35,7 +35,7 @@ export default {
     }
   },
   props: {
-    name: { type: String, required: true },
+    name: { type: String },
     type: { type: String, default: 'text' },
     placeholder: { type: String },
     label: { type: String },
@@ -44,7 +44,7 @@ export default {
     border: { type: Boolean, default: false }
   },
   mounted () {
-    this.data = this.$props.value
+    this.data = this.value
   }
 }
 </script>
